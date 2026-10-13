@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f4">
+    <meta name="description" content="大数据技术专业的当前岗位行情、求职关注点与未来发展趋势。">
+    <title>大数据技术｜行情与未来趋势</title>
+    <style>
+        :root { color-scheme: light; --ink: #17251f; --muted: #68776f; --green: #245f49; --lime: #d8f278; --paper: #f5f7f4; --line: #e1e8e1; font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; color: var(--ink); background: var(--paper); }
+        * { box-sizing: border-box; } body { min-width: 320px; margin: 0; } a { color: inherit; }
+        .topbar { display: flex; min-height: 64px; align-items: center; justify-content: space-between; gap: 16px; padding: 0 clamp(18px, 6vw, 80px); border-bottom: 1px solid rgb(23 37 31 / 8%); }
+        .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 750; text-decoration: none; }
+        .mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 10px; background: var(--green); color: var(--lime); }
+        .back { color: var(--green); font-size: 11px; font-weight: 700; text-decoration: none; }
+        .hero { padding: clamp(55px, 9vw, 98px) 20px 56px; background: radial-gradient(ellipse at 7% 100%, #d9f3ed, transparent 38%), radial-gradient(ellipse at 92% 0%, rgb(216 242 120 / 34%), transparent 34%), var(--paper); }
+        .hero-inner, main { width: min(100% - 40px, 1000px); margin: 0 auto; }
+        .eyebrow { margin: 0 0 15px; color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .16em; }
+        h1 { margin: 0; font-size: clamp(39px, 7vw, 76px); letter-spacing: -.065em; line-height: 1.12; } h1 span { color: var(--green); }
+        .lead { max-width: 690px; margin: 20px 0 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+        .kind { display: inline-flex; margin-top: 22px; padding: 8px 12px; border-radius: 999px; background: #e7f2e2; color: var(--green); font-size: 11px; font-weight: 700; }
+        main { padding: 30px 0 66px; }
+        .notice { margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e7eadd; border-radius: 12px; background: #f0f2e9; color: #69746d; font-size: 10px; line-height: 1.8; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .panel { min-height: 250px; padding: clamp(20px, 4vw, 30px); border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+        .panel.future { background: #edf4e9; }
+        .panel h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 15px; font-size: 17px; }
+        .panel h2 span { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; background: #e9f3e5; color: var(--green); font-size: 12px; }
+        .future h2 span { background: var(--green); color: var(--lime); }
+        .panel p, .panel li { color: var(--muted); font-size: 12px; line-height: 1.9; }
+        .panel p { margin: 0; } .panel ul { display: grid; gap: 7px; margin: 13px 0 0; padding-left: 18px; }
+        .skill { margin-top: 14px !important; padding-top: 12px; border-top: 1px solid var(--line); color: #506b59 !important; font-size: 11px !important; }
+        .tradeoffs { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 13px; }
+        .tradeoffs > div { padding: 10px 11px; border-radius: 10px; background: #edf5e9; }
+        .tradeoffs > .caution { background: #f5f1e9; }
+        .tradeoffs strong { display: block; margin-bottom: 4px; color: var(--green); font-size: 10px; }
+        .tradeoffs .caution strong { color: #8a6840; }
+        .tradeoffs p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+        .education-compare { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+        .education-compare h3 { margin: 0 0 9px; color: #506b59; font-size: 11px; }
+        .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .education-grid > div { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: rgb(255 255 255 / 70%); }
+        .education-grid strong { display: block; margin-bottom: 5px; color: var(--green); font-size: 10px; }
+        .education-grid p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+        .education-grid p + p { margin-top: 5px; }
+        .career-cert { margin-top: 24px; padding: clamp(20px, 4vw, 30px); border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+        .career-cert h2 { margin: 0; font-size: 19px; }
+        .career-cert > p { margin: 8px 0 16px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+        .career-cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+        .career-cert-grid section { padding: 15px; border-radius: 13px; background: #edf5e9; }
+        .career-cert-grid section:nth-child(2) { background: #f3f1e9; }
+        .career-cert-grid section:nth-child(3) { background: #eef2f7; }
+        .career-cert-grid h3 { margin: 0 0 9px; color: var(--green); font-size: 12px; }
+        .career-cert-grid ul { display: grid; gap: 7px; margin: 0; padding-left: 17px; }
+        .career-cert-grid li { color: var(--muted); font-size: 10px; line-height: 1.75; }
+        @media (max-width: 720px) { .career-cert-grid { grid-template-columns: 1fr; } }
+        .transfer-plan { margin-top: 24px; padding: clamp(20px, 4vw, 30px); border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+        .transfer-plan h2 { margin: 0; font-size: 19px; }
+        .transfer-plan > p { margin: 8px 0 16px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+        .transfer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .transfer-grid section { padding: 16px; border-radius: 13px; background: #edf5e9; }
+        .transfer-grid section + section { background: #f3f1e9; }
+        .transfer-grid h3 { margin: 0 0 9px; color: var(--green); font-size: 12px; }
+        .transfer-grid p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.85; }
+        @media (max-width: 620px) { .transfer-grid { grid-template-columns: 1fr; } }
+        .next { margin-top: 16px; padding: 17px 20px; border-radius: 14px; background: var(--green); color: rgb(255 255 255 / 82%); font-size: 11px; line-height: 1.85; }
+        .next strong { color: var(--lime); }
+        footer { display: flex; justify-content: space-between; gap: 14px; margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); color: #87938b; font-size: 10px; }
+        footer a { color: var(--green); font-weight: 700; text-decoration: none; }
+        @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } .panel { min-height: auto; } }
+        @media (max-width: 420px) { .topbar { min-height: 58px; padding: 0 14px; } .brand, .back { font-size: 10px; } .hero-inner, main { width: calc(100% - 28px); } footer { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header class="topbar"><a class="brand" href="计算机类专业前景.html"><span class="mark" aria-hidden="true">↗</span><span>漳州城市职业技术学院 · 专业指南</span></a><a class="back" href="专业行情与未来趋势.html">← 所有专业</a></header>
+    <section class="hero"><div class="hero-inner">
+        <p class="eyebrow">03 / 06 · CAREER LANDSCAPE</p>
+        <h1>大数据技术<br><span>让数据支持决策。</span></h1>
+        <p class="lead">学习数据采集、处理、分析和呈现，把数据转化为业务可以理解的信息。专业偏理工科，适合逻辑清晰、做事细致并愿意分析问题的同学。</p>
+        <span class="kind">理工科 · 数据与分析</span>
+    </div></section>
+    <main>
+        <aside class="notice">学历说明：本页对比专科与本科及以上学历的常见岗位入口和发展路径。具体要求因企业、地区和职责而异，不是统一门槛；行情内容为定性观察，不是实时招聘或薪资统计。</aside>
+        <div class="grid">
+            <section class="panel"><h2><span>今</span>当前行情观察</h2>
+                <p>入门方向包括数据处理、报表与可视化支持、数据质量检查、商业分析助理等。日常工作通常要理解指标含义、确认数据准确性，并将发现清楚地传达给业务团队。</p>
+                <ul><li>SQL、表格分析与可视化是实用的基础技能组合。</li><li>岗位可能需要和业务部门沟通，理解数据背后的实际问题。</li><li>只有机械录入或简单制图，较难展示完整分析能力。</li></ul>
+                <p class="skill">建议准备：SQL 查询、数据清洗、指标理解、图表呈现和结论表达。</p>
+                <div class="tradeoffs"><div><strong>行情优势</strong><p>专科毕业可关注数据整理、报表制作、质量检查和可视化支持等岗位，案例作品可展示工具与逻辑能力。</p></div><div class="caution"><strong>需要注意</strong><p>部分分析师、建模和研发岗位可能要求本科及以上；专科入门需补强 SQL、统计基础和业务表达，初期也可能有较多清洗工作。</p></div></div>
+                <div class="education-compare"><h3>学历层次：当前岗位入口与取舍</h3><div class="education-grid"><div><strong>专科</strong><p>优势：可从数据整理、报表、质量检查和可视化支持入门，案例作品能体现工具实操。</p><p>局限：分析、建模岗位常更偏好本科及以上，需强化统计、SQL 与业务沟通能力。</p></div><div><strong>本科及以上</strong><p>优势：更容易满足部分数据分析、建模和研发岗位的学历条件，统计理论基础通常更深入。</p><p>局限：学历本身不等于业务分析能力，仍需可复现项目和实际行业理解。</p></div></div></div>
+            </section>
+            <section class="panel future"><h2><span>→</span>未来趋势判断</h2>
+                <p>自动化工具和 AI 会承担更多重复处理，数据治理、质量、合规使用及业务决策支持的重要性随之提高。会使用工具之外，还需要判断数据能否支持结论。</p>
+                <ul><li>数据质量和隐私保护会贯穿数据采集、分析和共享流程。</li><li>自然语言分析工具普及，结果验证与业务解释仍需专业判断。</li><li>分析能力与行业知识结合，有助于找到更具体的应用价值。</li></ul>
+                <p class="skill">发展路径：数据处理与报表 → 数据分析支持 → 数据治理或业务洞察。</p>
+                <div class="tradeoffs"><div><strong>趋势优势</strong><p>专科生可从数据运营和治理支持积累行业经验，以可复现分析项目逐步争取更复杂任务。</p></div><div class="caution"><strong>趋势挑战</strong><p>高级建模、算法和研究岗位通常更看重数学基础及本科以上学历；自动化也会压缩单纯重复处理工作。</p></div></div>
+                <div class="education-compare"><h3>学历层次：未来发展路径与取舍</h3><div class="education-grid"><div><strong>专科</strong><p>优势：可走数据运营、质量治理和业务支持路线，以行业经验和项目成果逐步拓宽职责。</p><p>局限：高级建模、算法及研究岗位通常更看重本科及以上与数学基础，学历提升可能有帮助。</p></div><div><strong>本科及以上</strong><p>优势：更便于进入复杂分析、建模和研发岗位的候选范围，利于继续深造。</p><p>局限：数据工具自动化同样影响重复岗位，高学历也必须结合业务判断与实践成果。</p></div></div></div>
+            </section>
+        </div>
+        <section class="career-cert" aria-labelledby="career-cert-title">
+            <h2 id="career-cert-title">就业方向与证书建议</h2>
+            <p>证书是能力证明的补充，不是就业保证。报名前请核对证书性质、报考条件、当地是否开考及发证机构信息。</p>
+            <div class="career-cert-grid">
+                <section><h3>可关注的就业方向</h3><ul><li>数据处理、报表制作与数据可视化</li><li>数据质量检查、数据运营与治理支持</li><li>商业分析助理、数据分析支持或数据平台运维助理</li></ul></section>
+                <section><h3>专业相关证书（按需选择）</h3><ul><li>软考数据库系统工程师或软件设计师：按数据库、开发方向和基础选择</li><li>云厂商大数据/数据分析认证：属于厂商认证，先看岗位需求、考试费用和版本有效期</li><li>统计专业技术资格：了解当年报考条件与考试范围后再决定</li></ul></section>
+                <section><h3>通用证书建议</h3><ul><li>全国计算机等级考试二级：可选择 Python、Office 等科目，结合岗位准备</li><li>大学英语四/六级：按学校报名资格和目标岗位需要参加</li><li>比证书更重要的是 SQL、数据分析案例和能复现的项目作品</li></ul></section>
+            </div>
+        </section>
+        <section class="transfer-plan" aria-labelledby="transfer-title">
+            <h2 id="transfer-title">专升本规划：从备考到升本后</h2>
+            <p>以下是结合大数据方向的学习建议，不代表固定考试科目或保证可报专业；请核对福建省当年专升本考试大纲、招生专业目录和院校要求。</p>
+            <div class="transfer-grid">
+                <section><h3>升本前 · 复习方向</h3><p>先按当年考试大纲安排公共基础科目；专业基础可重点复习高等数学、程序设计基础、数据库与 SQL、数据结构入门及概率统计基础。持续练习数据清洗、指标理解和图表表达，把小型分析案例整理成作品。</p></section>
+                <section><h3>升本后 · 专业与发展方向</h3><p>可关注数据科学与大数据技术、计算机科学与技术、软件工程等相近本科方向（以当年可报目录为准）。本科阶段可深入数据库、统计分析、数据工程与治理，之后关注数据分析、数据工程、数据治理或继续攻读更高学历。</p></section>
+            </div>
+        </section>
+        <aside class="next"><strong>给在校学习的建议：</strong>用公开或模拟数据完成一个小分析，从提出问题、清洗数据到图表和结论，整理成能复现的作品集；若目标是数据建模、算法等岗位，可同步补数学基础并规划专升本或继续深造。</aside>
+        <footer><span>专业介绍与趋势仅供参考，不构成就业、薪资或录用承诺。</span><a href="计算机类专业前景.html#majors">返回招生计划与专业总览 ↑</a></footer>
+    </main>
+</body>
+</html>
