@@ -184,9 +184,21 @@
         .major-card > p { min-height: 42px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
         .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
         .tag { padding: 5px 9px; border-radius: 999px; background: #f1f4f0; color: #53665b; font-size: 10px; }
+        .card-competition { margin-top: 14px; padding: 10px 11px; border-radius: 11px; background: #f6f8f4; color: var(--muted); font-size: 10px; line-height: 1.7; }
+        .card-competition strong { display: block; margin-bottom: 3px; color: var(--green); font-size: 10px; }
+        .card-competition a { color: var(--green); font-weight: 700; text-decoration: none; }
+        .card-competition a:hover { text-decoration: underline; text-underline-offset: 3px; }
         .card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 18px; }
         .card-link { color: var(--green); font-size: 12px; font-weight: 700; text-decoration: none; }
         .card-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+        .competition-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .competition-card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+        .competition-card h3 { margin: 0 0 10px; font-size: 17px; }
+        .competition-card p, .competition-card li { color: var(--muted); font-size: 12px; line-height: 1.8; }
+        .competition-card p { margin: 0; }
+        .competition-card ul { display: grid; gap: 6px; margin: 12px 0 0; padding-left: 18px; }
+        .competition-label { display: inline-flex; margin-bottom: 12px; padding: 5px 9px; border-radius: 999px; background: #e7f2e2; color: var(--green); font-size: 10px; font-weight: 700; }
 
         .advice {
             display: grid;
@@ -235,12 +247,13 @@
             .nav-links a { font-size: 11px; }
             .section-heading { align-items: start; flex-direction: column; }
             .major-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .competition-grid { grid-template-columns: 1fr; }
             .advice { grid-template-columns: 1fr; }
         }
         @media (max-width: 520px) {
-            .topbar { min-height: 58px; padding: 0 16px; }
+            .topbar { min-height: 58px; flex-wrap: wrap; gap: 8px; padding: 8px 16px; }
             .brand { font-size: 11px; }
-            .nav-links { gap: 11px; }
+            .nav-links { width: 100%; justify-content: space-between; gap: 8px; }
             .nav-links a { font-size: 10px; }
             .hero { padding: 66px 22px 58px; }
             .hero::after { right: -190px; }
@@ -265,6 +278,7 @@
         <nav class="nav-links" aria-label="页面导航">
             <a href="招生计划.html">招生计划</a>
             <a href="#majors">专业一览</a>
+            <a href="#competitions">省市赛事</a>
             <a href="专业行情与未来趋势.html">行情与未来趋势</a>
         </nav>
     </header>
@@ -297,6 +311,7 @@
                     <h3>物联网应用技术</h3>
                     <p>让设备彼此连接，关注传感、网络、设备接入与系统运维。</p>
                     <div class="tag-row"><span class="tag">理工科</span><span class="tag">软硬件结合</span><span class="tag">智能设备</span></div>
+                    <div class="card-competition"><strong>可关注的省、市赛事方向</strong>福建省职业院校技能大赛：物联网、网络技术；漳州本地赛事：设备接入、智能场景项目。<a href="iot-career.html">专页详情 →</a></div>
                     <div class="card-bottom"><a class="card-link" href="iot-career.html">查看专业专页 →</a></div>
                 </article>
                 <article class="major-card">
@@ -304,6 +319,7 @@
                     <h3>智能产品开发与应用</h3>
                     <p>围绕智能终端产品，学习嵌入式开发、功能调试与应用落地。</p>
                     <div class="tag-row"><span class="tag">理工科</span><span class="tag">产品实践</span><span class="tag">嵌入式</span></div>
+                    <div class="card-competition"><strong>可关注的省、市赛事方向</strong>福建省职业院校技能大赛：智能设备、嵌入式、电子技术；漳州本地赛事：智能终端原型、功能调试。<a href="smart-product-career.html">专页详情 →</a></div>
                     <div class="card-bottom"><a class="card-link" href="smart-product-career.html">查看专业专页 →</a></div>
                 </article>
                 <article class="major-card">
@@ -311,6 +327,7 @@
                     <h3>大数据技术</h3>
                     <p>把分散的数据整理成可用信息，重视数据处理、分析与可视化。</p>
                     <div class="tag-row"><span class="tag">理工科</span><span class="tag">数据分析</span><span class="tag">商业洞察</span></div>
+                    <div class="card-competition"><strong>可关注的省、市赛事方向</strong>福建省职业院校技能大赛：大数据、数据应用；漳州本地赛事：数据分析、可视化与数字化应用。<a href="big-data-career.html">专页详情 →</a></div>
                     <div class="card-bottom"><a class="card-link" href="big-data-career.html">查看专业专页 →</a></div>
                 </article>
                 <article class="major-card">
@@ -318,6 +335,7 @@
                     <h3>人工智能技术应用</h3>
                     <p>学习人工智能工具与应用方案，重在把模型能力用于真实场景。</p>
                     <div class="tag-row"><span class="tag">理工科</span><span class="tag">AI 应用</span><span class="tag">智能化方案</span></div>
+                    <div class="card-competition"><strong>可关注的省、市赛事方向</strong>福建省职业院校技能大赛：人工智能、数据应用；漳州本地赛事：AI 工具应用、场景化小项目。<a href="ai-career.html">专页详情 →</a></div>
                     <div class="card-bottom"><a class="card-link" href="ai-career.html">查看专业专页 →</a></div>
                 </article>
                 <article class="major-card">
@@ -325,6 +343,7 @@
                     <h3>移动应用开发</h3>
                     <p>从界面与交互到功能实现，参与手机应用及移动端服务开发。</p>
                     <div class="tag-row"><span class="tag">理工科</span><span class="tag">软件开发</span><span class="tag">用户体验</span></div>
+                    <div class="card-competition"><strong>可关注的省、市赛事方向</strong>福建省职业院校技能大赛：软件开发、移动应用；漳州本地赛事：App/小程序开发、功能测试。<a href="mobile-app-career.html">专页详情 →</a></div>
                     <div class="card-bottom"><a class="card-link" href="mobile-app-career.html">查看专业专页 →</a></div>
                 </article>
                 <article class="major-card">
@@ -332,7 +351,38 @@
                     <h3>融媒体技术与运营</h3>
                     <p>偏文科与传媒方向，融合内容创作、视听表达、数字传播和平台运营。</p>
                     <div class="tag-row"><span class="tag">文科传媒</span><span class="tag">内容运营</span></div>
+                    <div class="card-competition"><strong>可关注的省、市赛事方向</strong>福建省职业院校技能大赛：数字媒体、融媒体应用；漳州本地赛事：短视频、创意设计与本地文化传播。<a href="media-career.html">专页详情 →</a></div>
                     <div class="card-bottom"><a class="card-link" href="media-career.html">查看专业专页 →</a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="competitions" aria-labelledby="competitions-title">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">LOCAL COMPETITIONS</p>
+                    <h2 id="competitions-title">从省赛到市赛，积累实战作品</h2>
+                </div>
+                <p class="section-note">按专业方向留意当届赛项；报名资格、赛制和举办安排以赛事通知及学校选拔为准。</p>
+            </div>
+            <div class="competition-grid">
+                <article class="competition-card">
+                    <span class="competition-label">福建省 · 省级</span>
+                    <h3>福建省职业院校技能大赛</h3>
+                    <p>职业院校学生可关注的技能实践赛事，按当届赛项选择参赛方向。</p>
+                    <ul>
+                        <li>计算机类可留意软件开发、网络技术、人工智能、大数据、物联网及数字媒体等相关项目。</li>
+                        <li>也可关注福建省大学生创新大赛，围绕技术应用或数字内容准备创新项目（以当届通知为准）。</li>
+                    </ul>
+                </article>
+                <article class="competition-card">
+                    <span class="competition-label">漳州市 · 市级</span>
+                    <h3>漳州市职业院校技能竞赛</h3>
+                    <p>留意漳州市教育、人社部门和学校发布的当届赛事或选拔通知，具体名称与赛项以正式通知为准。</p>
+                    <ul>
+                        <li>结合专业方向，关注信息技术、数字媒体、智能设备、软件应用等相关赛项。</li>
+                        <li>可先参加校内选拔、技能训练或项目展示，积累作品与团队经验。</li>
+                    </ul>
                 </article>
             </div>
         </section>
